@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #141332;
+  --color: #ffffff;
+}
+@theme {
+  --color-primary: #cbc8ff;
+  --color-primary-deep: #141332;
+  --color-secondary: #1d1d41;
+  --color-tertiary: #64cff6;
+  --color-accent: #6359e9;
+  --color-success: #02b15a;
+  --color-error: #e41414;
+  --color-light: #dcd9d9;
+
+  --color-primary-text: #8C89B4;
+  --color-disabled: rgba(30, 30, 30, 0.3);
+  --color-disabled-text: rgba(248, 248, 248, 0.85);
+
+  --font-karla: "Karla", sans-serif;
+
+  --border-color-primary: #dcd9d9;
+
+  --breakpoint-3xl: 2500px;
+  --breakpoint-2xl: 19200px;
+  --breakpoint-xs: 480px;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-text: var(--color);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color);
+}
+
+@layer components {
+  .container {
+    @apply w-full 3xl:!max-w-[1400px] 2xl:!max-w-[1000px] xl:!max-w-[1700px] lg:!max-w-full md:!max-w-full sm:!max-w-full xs:!max-w-full;
+  }
+
+  .shadow-card {
+    @apply shadow-[0px_0px_100px_2px_#1E1E1E1A];
+  }
 }
