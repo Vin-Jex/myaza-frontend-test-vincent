@@ -26,7 +26,7 @@ Before you begin, ensure you have the following installed on your machine:
 3. Navigate to the project directory:
 
    ```bash
-   cd uifry
+   cd myaza-frontend-test-vincent
    ```
 
 ---
