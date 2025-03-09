@@ -5,6 +5,8 @@ import AnalyticsChart from "./AnalyticsChart";
 import Table from "../table/TableComponent";
 import FinancialCard from "../cards/FinancialCard";
 import CustomSelect from "../ui/CustomSelect";
+import MyCard from "./MyCard";
+import ActivityChart from "./ActivityChart";
 
 const OverviewPage = () => {
   const [selectedYear, setSelectedYear] = useState("2020");
@@ -15,8 +17,8 @@ const OverviewPage = () => {
       title={"Welcome Back, Ali 👋"}
       description='Here’s what’s happening with your store today.'
     >
-      <div className='flex items-center justify-between space-x-6 w-full'>
-        <div className='flex flex-col justify-center space-y-6 w-[60%]'>
+      <div className='flex justify-between space-x-6 w-full'>
+        <div className='flex flex-col justify-center space-y-6 w-full max-w-[60%]'>
           <div className='flex items-center justify-center w-full space-x-4'>
             <FinancialCard
               title='Total Sales'
@@ -98,22 +100,26 @@ const OverviewPage = () => {
           </div>
         </div>
 
-        <div className=''>
-          <Table
-            columns={[
-              { Header: "Name", accessor: "name" },
-              { Header: "Email", accessor: "email" },
-            ]}
-            data={[
-              {
-                name: "John Doe",
-                email: "john@example.com",
-                profileImage: "/john.jpg",
-              },
-              { name: "Jane Doe", email: "jane@example.com" },
-            ]}
-            profileImageAccessor='profileImage'
-          />
+        <div className='flex flex-col space-y-6 w-full max-w-[40%]'>
+          <div className='px-4 py-6 bg-secondary rounded-2xl'>
+            <MyCard />
+          </div>
+
+          <div className='px-4 pt-6 bg-secondary rounded-2xl'>
+            <div className='flex items-center justify-between'>
+              <h1 className='text-xl font-bold'>Activity</h1>
+              {/* Use the CustomSelect component */}
+              <CustomSelect
+                options={years}
+                selectedValue={selectedYear}
+                onChange={(value) => setSelectedYear(value)}
+              />
+            </div>
+
+            <div className='mt-4'>
+              <ActivityChart />
+            </div>
+          </div>
         </div>
       </div>
     </DashboardLayout>
