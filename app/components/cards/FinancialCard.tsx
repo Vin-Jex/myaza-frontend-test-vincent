@@ -12,15 +12,19 @@ const FinancialCard: React.FC<FinancialCardProps> = ({
   isIncome,
 }) => {
   return (
-    <div className='bg-secondary text-white p-4 rounded-xl flex items-center justify-between w-full shadow-md'>
-      <div className='flex items-center gap-3'>
+    <div className='bg-secondary text-white p-3 sm:p-4 rounded-xl flex items-center justify-between w-full shadow-md'>
+      <div className='flex items-center gap-2 sm:gap-3'>
         <div
-          className={`p-2 rounded-lg ${isIncome ? "bg-tertiary" : "bg-accent"}`}
+          className={`p-1.5 sm:p-2 rounded-lg ${
+            isIncome ? "bg-tertiary" : "bg-accent"
+          }`}
         >
           {isIncome ? (
             <svg
-              width='30'
-              height='30'
+              width='24'
+              height='24'
+              sm-width='30'
+              sm-height='30'
               viewBox='0 0 30 30'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -44,8 +48,10 @@ const FinancialCard: React.FC<FinancialCardProps> = ({
             </svg>
           ) : (
             <svg
-              width='31'
-              height='31'
+              width='26'
+              height='26'
+              sm-width='31'
+              sm-height='31'
               viewBox='0 0 40 40'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -69,17 +75,19 @@ const FinancialCard: React.FC<FinancialCardProps> = ({
             </svg>
           )}
         </div>
-        <div className='flex flex-col space-y-1'>
-          <p className='text-sm text-primary-text'>{title}</p>
-          <p className='text-2xl font-semibold'>${amount.toLocaleString()}</p>
+        <div className='flex flex-col space-y-0.5 sm:space-y-1'>
+          <p className='text-xs sm:text-sm text-primary-text'>{title}</p>
+          <p className='text-lg sm:text-2xl font-semibold'>
+            ${amount.toLocaleString()}
+          </p>
         </div>
       </div>
       <div
-        className={`text-sm px-1.5 py-0.5 rounded-lg mt-auto ${
+        className={`text-xs sm:text-sm px-1.5 py-0.5 rounded-lg mt-auto ${
           isIncome ? "bg-success/10 text-success" : "bg-error/10 text-error"
         }`}
       >
-        {isIncome ? "+" : "+"}
+        {isIncome ? "+" : "-"}
         {percentage}%
       </div>
     </div>

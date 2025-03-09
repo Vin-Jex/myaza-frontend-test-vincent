@@ -31,7 +31,7 @@ const ActivityChart: React.FC = () => {
     ],
     legend: {
       enabled: true,
-      position: "bottom",
+      position: "top",
       item: {
         marker: {
           shape: "circle",

@@ -1,8 +1,8 @@
-import OverviewPage from "@/app/components/dashboard/OverviewPage";
+import WalletPage from "@/app/components/dashboard/WalletPage";
 import React from "react";
 
 const page = () => {
-  return <OverviewPage />;
+  return <WalletPage />;
 };
 
 export default page;

@@ -7,130 +7,99 @@ import FinancialCard from "../cards/FinancialCard";
 import CustomSelect from "../ui/CustomSelect";
 import MyCard from "./MyCard";
 import ActivityChart from "./ActivityChart";
+import Button from "../ui/Button";
+import { table_columns_overview, transactions_overview } from "@/app/data/data";
 
 const OverviewPage = () => {
   const [selectedYear, setSelectedYear] = useState("2020");
   const years = ["2019", "2020", "2021", "2022", "2023"];
+
+  const financialData = [
+    { title: "Total Sales", amount: 1000, percentage: 10, isIncome: true },
+    { title: "Total Expenses", amount: 500, percentage: 5, isIncome: false },
+  ];
 
   return (
     <DashboardLayout
       title={"Welcome Back, Ali 👋"}
       description='Here’s what’s happening with your store today.'
     >
-      <div className='flex justify-between space-x-6 w-full'>
-        <div className='flex flex-col space-y-6 w-full max-w-[60%]'>
-          <div className='flex items-center justify-center w-full space-x-4'>
-            <FinancialCard
-              title='Total Sales'
-              amount={1000}
-              percentage={10}
-              isIncome={true}
-            />
-            <FinancialCard
-              title='Total Expenses'
-              amount={500}
-              percentage={5}
-              isIncome={false}
-            />
+      <div className='flex flex-col lg:flex-row justify-between lg:space-x-6 space-y-6 lg:space-y-0 w-full'>
+        {/* Left Column */}
+        <div className='flex flex-col space-y-6 w-full lg:max-w-[60%]'>
+          {/* Financial Cards */}
+          <div className='flex flex-col md:flex-row items-center justify-center w-full space-y-4 md:space-y-0 md:space-x-4'>
+            {financialData.map((data, index) => (
+              <FinancialCard
+                key={index}
+                title={data.title}
+                amount={data.amount}
+                percentage={data.percentage}
+                isIncome={data.isIncome}
+              />
+            ))}
           </div>
 
-          <div className='px-4 pt-6 bg-secondary rounded-2xl'>
-            <div className='flex items-center justify-between'>
-              <h1 className='text-xl font-bold'>Analytics</h1>
-              {/* Use the CustomSelect component */}
+          {/* Analytics Section */}
+          <div className='px-3 sm:px-4 pt-5 sm:pt-6 bg-secondary rounded-2xl'>
+            <div className='flex flex-row items-center justify-between space-y-2 sm:space-y-0'>
+              <h1 className='text-lg sm:text-xl font-bold'>Analytics</h1>
               <CustomSelect
                 options={years}
                 selectedValue={selectedYear}
                 onChange={(value) => setSelectedYear(value)}
               />
             </div>
-
-            <div className='mt-4'>
+            <div className='mt-3 sm:mt-4'>
               <AnalyticsChart />
             </div>
           </div>
 
-          <div className='px-4 pt-6 bg-secondary rounded-2xl'>
-            <div className='flex items-center justify-between'>
-              <h1 className='text-xl font-bold'>Recent transactions</h1>
-              <span className='text-sm text-primary-text cursor-pointer'>
+          {/* Recent Transactions Section */}
+          <div className='px-3 sm:px-4 pt-5 sm:pt-6 bg-secondary rounded-2xl'>
+            <div className='flex flex-row items-center justify-between space-y-2 sm:space-y-0'>
+              <h1 className='text-lg sm:text-xl font-bold'>
+                Recent transactions
+              </h1>
+              <span className='text-xs sm:text-sm text-primary-text cursor-pointer'>
                 See All
               </span>
             </div>
-
-            <div className='mt-4'>
+            <div className='mt-3 sm:mt-4 overflow-x-auto'>
               <Table
-                columns={[
-                  { Header: "Name", accessor: "name" },
-                  { Header: "Date", accessor: "date" },
-                  { Header: "Amount", accessor: "amount" },
-                  { Header: "Status", accessor: "status" },
-                ]}
-                data={[
-                  {
-                    name: "John Doe",
-                    date: "2023-10-01",
-                    amount: "$500",
-                    status: "Completed",
-                    profileImage: "/images/profile.svg",
-                  },
-                  {
-                    name: "Jane Doe",
-                    date: "2023-10-02",
-                    amount: "$300",
-                    status: "Pending",
-                  },
-                  {
-                    name: "Alice Smith",
-                    date: "2023-10-03",
-                    amount: "$200",
-                    status: "Failed",
-                    profileImage: "/images/profile.svg",
-                  },
-                  {
-                    name: "Bob Johnson",
-                    date: "2023-10-04",
-                    amount: "$400",
-                    status: "Completed",
-                  },
-                  {
-                    name: "Bob Johnson",
-                    date: "2023-10-04",
-                    amount: "$400",
-                    status: "Completed",
-                  },
-                  {
-                    name: "Bob Johnson",
-                    date: "2023-10-04",
-                    amount: "$400",
-                    status: "Completed",
-                  },
-                ]}
+                columns={table_columns_overview}
+                data={transactions_overview}
                 profileImageAccessor='profileImage'
               />
             </div>
           </div>
         </div>
 
-        <div className='flex flex-col space-y-6 w-full max-w-[40%]'>
-          <div className='px-4 py-6 bg-secondary rounded-2xl'>
+        {/* Right Column */}
+        <div className='flex flex-col space-y-6 w-full lg:max-w-[40%]'>
+          {/* My Card Section */}
+          <div className='px-3 sm:px-4 py-5 sm:py-6 bg-secondary rounded-2xl'>
             <MyCard />
           </div>
 
-          <div className='px-4 pt-6 bg-secondary rounded-2xl'>
-            <div className='flex items-center justify-between'>
-              <h1 className='text-xl font-bold'>Activity</h1>
-              {/* Use the CustomSelect component */}
+          {/* Activity Section */}
+          <div className='px-3 sm:px-4 py-5 sm:py-6 bg-secondary rounded-2xl'>
+            <div className='flex flex-row items-center justify-between space-y-2 sm:space-y-0'>
+              <h1 className='text-lg sm:text-xl font-bold'>Activity</h1>
               <CustomSelect
                 options={years}
                 selectedValue={selectedYear}
                 onChange={(value) => setSelectedYear(value)}
               />
             </div>
-
-            <div className='mt-4'>
-              <ActivityChart />
-            </div>
+            <ActivityChart />
+            <Button
+              variant='outline'
+              width='fit'
+              className='!mx-auto mt-3 sm:mt-4'
+            >
+              See All Activities
+            </Button>
           </div>
         </div>
       </div>

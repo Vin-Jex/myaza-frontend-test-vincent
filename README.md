@@ -1,6 +1,6 @@
 # Getting Started with Uifry
 
-This guide will walk you through setting up and running the Uifry application locally. Uifry includes features such as authentication, a dashboard layout, data display, and analytics charts. Follow the steps below to get started.
+This guide will walk you through setting up and running the Uifry application locally. Uifry is a modern web application featuring authentication, a responsive dashboard layout, data visualization, and analytics. Follow the steps below to get started.
 
 ---
 
@@ -90,6 +90,10 @@ Before you begin, ensure you have the following installed on your machine:
 5. **Custom Select Dropdown**:
    - Reusable custom select component for year selection.
 
+6. **Wallet Management**:
+   - Display wallet balances and recent transactions.
+   - Add new wallets dynamically with random data.
+
 ---
 
 ## Step 6: Customize the Application
@@ -164,6 +168,17 @@ Before you begin, ensure you have the following installed on your machine:
 ## Support
 
 For any questions or issues, please contact Vincent [VinJex](https://mailto:vincentcode0@gmail.com).
+
+---
+
+## Contributing
+
+We welcome contributions to Uifry! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear messages.
+4. Submit a pull request with a detailed description of your changes.
 
 ---
 

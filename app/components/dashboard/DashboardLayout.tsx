@@ -23,15 +23,21 @@ const DashboardLayout = ({
   return (
     <div className='relative w-full h-[100dvh] container overflow-auto mx-auto flex flex-row'>
       <aside
-        className={`left-0 top-0 h-screen bg-secondary lg:w-[16.5rem] overflow-auto z-30 transition-transform transform
-    ${isSidenavOpen ? "translate-x-0" : "-translate-x-full"} 
-    lg:translate-x-0 lg:block ${!isSidenavOpen ? "hidden lg:block" : ""}`}
+        className={`fixed lg:static top-0 h-screen bg-secondary lg:w-[16.5rem] overflow-auto z-100 
+    transition-transform duration-300 ease-in-out transform
+    ${
+      isSidenavOpen
+        ? "translate-x-0 left-0 w-[16.5rem]"
+        : "-translate-x-[16.5rem]"
+    }
+    lg:translate-x-0 lg:block`}
       >
         <SideNav />
       </aside>
-      <div className='flex-1 w-full h-full overflow-y-auto relative flex flex-col px-2'>
-        <div className='w-full flex-0 flex z-40 lg:z-20 sticky top-0 right-0 mb-2'>
-          <nav className={`w-full mr-[2rem] ml-2`}>
+
+      <div className='flex-1 w-full h-full overflow-y-auto relative flex flex-col'>
+        <div className='w-full flex-0 flex z-40 lg:z-20 sticky top-0 right-0 mb-2 px-4'>
+          <nav className='w-full'>
             <TopNav
               toggleSidenav={toggleSidenav}
               isOpen={isSidenavOpen}
