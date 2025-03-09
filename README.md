@@ -163,7 +163,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Support
 
-For any questions or issues, please contact Vincent (VinJex).
+For any questions or issues, please contact Vincent [VinJex](https://mailto:vincentcode0@gmail.com).
 
 ---
 

@@ -46,3 +46,35 @@ body {
     @apply shadow-[0px_0px_100px_2px_#1E1E1E1A];
   }
 }
+
+
+
+.custom-pagination {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px; 
+}
+
+.custom-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #42429f;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-bullet-active {
+  width: 24px;
+  height: 8px;
+  background-color: #cbc8ff;
+  border-radius: 4px;
+  opacity: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
