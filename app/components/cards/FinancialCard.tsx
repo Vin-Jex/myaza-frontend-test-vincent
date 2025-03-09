@@ -1,3 +1,5 @@
+import React from "react";
+
 interface FinancialCardProps {
   title: string;
   amount: number;
@@ -15,6 +17,7 @@ const FinancialCard: React.FC<FinancialCardProps> = ({
     <div className='bg-secondary text-white p-3 sm:p-4 rounded-xl flex items-center justify-between w-full shadow-md'>
       <div className='flex items-center gap-2 sm:gap-3'>
         <div
+          data-testid={isIncome ? "income-icon" : "expense-icon"}
           className={`p-1.5 sm:p-2 rounded-lg ${
             isIncome ? "bg-tertiary" : "bg-accent"
           }`}
