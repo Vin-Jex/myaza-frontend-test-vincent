@@ -5,12 +5,9 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
-    "^next/(.*)$": "<rootDir>/__mocks__/next/$1",
-    "^next/image$": "<rootDir>/__mocks__/next/image.ts",
-    "^next/link$": "<rootDir>/__mocks__/next/link.ts",
   },
   transform: {
-    "^.+\\.(ts|tsx|js|jsx)$": "babel-jest",
+    "^.+\\.(t|j)sx?$": "@swc/jest",
   },
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
