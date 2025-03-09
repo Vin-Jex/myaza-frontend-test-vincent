@@ -22,7 +22,10 @@ const ForgotPasswordForm = () => {
       <p className='text-sm text-gray-600 mb-4'>
         Enter your email, and we’ll send you a password reset link.
       </p>
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col space-y-4 w-full sm:w-[70%] lg:w-[60%]'
+      >
         <Input
           type='email'
           placeholder='E.g Aliriaz@Uifry.com'

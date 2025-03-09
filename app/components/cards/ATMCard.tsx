@@ -18,13 +18,13 @@ const ATMCard: React.FC<ATMCardProps> = ({
   label,
 }) => {
   return (
-    <div className='relative flex flex-col w-full h-full rounded-lg overflow-hidden bg-[#684EEC] font-karla'>
+    <div className='relative flex flex-col w-full max-w-[500px] h-full rounded-lg overflow-hidden bg-[#684EEC] font-karla mx-auto'>
       {/* Background Layers */}
       <div className='absolute -top-[220px] -right-[200px] bg-[#733AD9] rounded-[1000%] w-full h-[320px] z-10'></div>
       <div className='absolute -bottom-[220px] -left-[200px] bg-[#5051D6] rounded-[1000%] w-full h-[320px] z-10'></div>
 
       {/* Card Content */}
-      <div className='relative z-10 p-6 text-white flex flex-col h-full min-h-[10rem] md:min-h-[15rem]'>
+      <div className='relative z-10 p-6 text-white flex flex-col h-full min-h-[15rem] md:min-h-[17rem]'>
         {/* Top Section: Balance and Card Type */}
         <div className='flex items-center justify-between'>
           <div>

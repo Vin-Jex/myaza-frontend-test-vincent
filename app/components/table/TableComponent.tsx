@@ -59,7 +59,7 @@ export const Table = <T,>({
 }: TableProps<T>) => {
   return (
     <div className='overflow-x-auto !shadow-md rounded-sm pb-2 font-karla'>
-      <table className='min-w-full'>
+      <table className='min-w-full table-auto'>
         <thead className=''>
           <tr className='text-primary-text text-sm border-b-[0.7px] border-[#2D2B4D]'>
             {columns.map((column, index) => (
@@ -161,7 +161,7 @@ export const Table = <T,>({
                           }}
                           className='py-2 px-2 text-sm text-gray-800 hover:bg-gray-100 rounded-full flex items-center justify-center'
                         >
-                          {action.icon ? action.icon : action.title}
+                          {action.icon || action.title}
                         </button>
                       ))}
                     </td>

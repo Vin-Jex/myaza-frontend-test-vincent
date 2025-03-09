@@ -46,8 +46,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center w-full max-w-full space-y-8'>
-      <div className='flex flex-col items-center justify-center space-y-2.5'>
+    <div className='flex flex-col items-center justify-center w-full max-w-full space-y-8 px-4'>
+      <div className='flex flex-col items-center justify-center space-y-2.5 text-center'>
         <Image
           src='/logo_full.svg'
           alt='logo'
@@ -58,13 +58,16 @@ const LoginForm = () => {
             router.push("/");
           }}
         />
-        <h4 className='text-2xl text-white font-semibold'>
+        <h4 className='text-xl md:text-2xl text-white font-semibold'>
           Welcome back, Ali Riaz 🙇🏾‍♀️
         </h4>
         <p className='text-sm text-light'>Login to access your Uifry account</p>
       </div>
 
-      <form onSubmit={handleSubmit} className='flex flex-col space-y-4 w-[50%]'>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col space-y-4 w-full sm:w-[70%] lg:w-[60%]'
+      >
         <InputField
           label='Email Address'
           name='email'

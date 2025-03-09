@@ -41,7 +41,6 @@ const SideNav = () => {
     <div
       className={`lg:block transition-transform transform flex-col h-full w-full py-8`}
     >
-      {/* <div className={`sidebar-nav ${active && 'active'}`} ref={navRef}> */}
       <div className={`px-4 flex flex-col h-full`} ref={navRef}>
         <div className='flex justify-between items-center'>
           <Image
@@ -289,7 +288,7 @@ const SideNav = () => {
               {options.map((option, index) => (
                 <span
                   key={index}
-                  className='block px-4 py-2 text-secondary hover:bg-primary cursor-pointer'
+                  className='block px-4 py-2 text-secondary hover:bg-primary cursor-pointer capitalize'
                   onClick={() => {
                     handleOptionChange(option);
                     if (selectedOption === "logout") {

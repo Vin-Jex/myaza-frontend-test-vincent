@@ -41,8 +41,8 @@ const SignupForm = () => {
   };
 
   return (
-    <div className='w-full max-w-md'>
-      <div className='flex flex-col items-center justify-center space-y-2.5'>
+    <div className='flex flex-col items-center justify-center w-full max-w-full space-y-8 px-4'>
+      <div className='flex flex-col items-center justify-center space-y-2.5 text-center'>
         <Image
           src='/logo_full.svg'
           alt='logo'
@@ -53,12 +53,15 @@ const SignupForm = () => {
             router.push("/");
           }}
         />
-        <h4 className='text-2xl text-white font-semibold'>
+        <h4 className='text-xl md:text-2xl text-white font-semibold'>
           Welcome to Uifry 🚀
         </h4>
         <p className='text-sm text-light'>Signup to start enjoying Uifry</p>
       </div>
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col space-y-4 w-full sm:w-[70%] lg:w-[60%]'
+      >
         <InputField
           label='Full Name'
           name='name'
