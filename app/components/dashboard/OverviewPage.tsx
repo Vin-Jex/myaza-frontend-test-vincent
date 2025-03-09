@@ -18,7 +18,7 @@ const OverviewPage = () => {
       description='Here’s what’s happening with your store today.'
     >
       <div className='flex justify-between space-x-6 w-full'>
-        <div className='flex flex-col justify-center space-y-6 w-full max-w-[60%]'>
+        <div className='flex flex-col space-y-6 w-full max-w-[60%]'>
           <div className='flex items-center justify-center w-full space-x-4'>
             <FinancialCard
               title='Total Sales'
@@ -86,6 +86,18 @@ const OverviewPage = () => {
                     amount: "$200",
                     status: "Failed",
                     profileImage: "/images/profile.svg",
+                  },
+                  {
+                    name: "Bob Johnson",
+                    date: "2023-10-04",
+                    amount: "$400",
+                    status: "Completed",
+                  },
+                  {
+                    name: "Bob Johnson",
+                    date: "2023-10-04",
+                    amount: "$400",
+                    status: "Completed",
                   },
                   {
                     name: "Bob Johnson",
