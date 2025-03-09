@@ -66,6 +66,7 @@ const SignupForm = () => {
           label='Full Name'
           name='name'
           type='text'
+          placeholder="Enter your full name"
           value={formData.name}
           onChange={handleChange}
           required
@@ -74,6 +75,7 @@ const SignupForm = () => {
           label='Email'
           type='email'
           name='email'
+          placeholder='E.g Aliriaz@Uifry.com'
           value={formData.email}
           onChange={handleChange}
           required
@@ -82,6 +84,7 @@ const SignupForm = () => {
           label='Password'
           type='password'
           name='password'
+          placeholder='Enter your password'
           value={formData.password}
           onChange={handleChange}
           required
